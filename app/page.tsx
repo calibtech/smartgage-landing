@@ -18,35 +18,39 @@ export default function Home() {
       {/* Navbar */}
       <header className="sticky top-0 z-30 border-b border-slate-800 bg-slate-950/80 backdrop-blur">
         <nav className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
-          <div className="flex items-center gap-2">
-            <div className="h-8 w-8 rounded-xl bg-gradient-to-tr from-emerald-400 to-cyan-400" />
-            <span className="text-lg font-semibold tracking-tight">
-              SmartGage
-            </span>
+          <div className="flex items-center gap-3">
+            <Image
+              src="/logo-smartgage.png"
+              alt="SmartGage"
+              width={72}
+              height={48}
+              className="object-contain"
+              priority
+            />            
           </div>
 
           <div className="hidden items-center gap-6 text-sm md:flex">
-            <a href={`#${sections.queEs}`} className="hover:text-emerald-300">
+            <a href={`#${sections.queEs}`} className="hover:text-cyan-300">
               Qué es
             </a>
             <a
               href={`#${sections.funciones}`}
-              className="hover:text-emerald-300"
+              className="hover:text-cyan-300"
             >
               Funciones
             </a>
             <a
               href={`#${sections.capturas}`}
-              className="hover:text-emerald-300"
+              className="hover:text-cyan-300"
             >
               Capturas
             </a>
-            <a href={`#${sections.planes}`} className="hover:text-emerald-300">
+            <a href={`#${sections.planes}`} className="hover:text-cyan-300">
               Precios
             </a>
             <a
               href={`#${sections.contacto}`}
-              className="hover:text-emerald-300"
+              className="hover:text-cyan-300"
             >
               Contacto
             </a>
@@ -54,19 +58,11 @@ export default function Home() {
 
           <div className="flex items-center gap-3">
             <Link
-              href="https://app.smartgage.com.mx/login" // ajusta cuando quieras
-              className="rounded-xl bg-emerald-500 px-4 py-2 text-sm font-semibold text-slate-950 shadow-lg shadow-emerald-500/30 hover:bg-emerald-400"
+              href="https://app.smartgage.com.mx/login"
+              className="rounded-xl bg-cyan-400 px-4 py-2 text-sm font-semibold text-slate-950 shadow-lg shadow-cyan-500/30 hover:bg-cyan-300"
             >
               Iniciar sesión
             </Link>
-            {/* 
-            <Link
-              href="https://app.smartgage.com.mx/registro" // ajusta cuando tengas ruta
-              className="rounded-xl bg-emerald-500 px-4 py-2 text-sm font-semibold text-slate-950 shadow-lg shadow-emerald-500/30 hover:bg-emerald-400"
-            >
-              Crear cuenta
-            </Link>
-            */}
           </div>
         </nav>
       </header>
@@ -75,37 +71,39 @@ export default function Home() {
       <main className="mx-auto max-w-6xl px-4 pb-16 pt-10 md:pt-16">
         <section
           id={sections.queEs}
-          className="grid gap-10 pb-20 md:grid-cols-2 md:items-center"
+          className="relative grid gap-10 pb-20 md:grid-cols-2 md:items-center"
         >
+          {/* Glow de fondo */}
+          <div className="pointer-events-none absolute -top-24 left-1/2 -z-10 h-[420px] w-[420px] -translate-x-1/2 rounded-full bg-cyan-500/20 blur-[120px]" />
+        
           <div>
-            <span className="inline-flex items-center rounded-full border border-emerald-400/40 bg-emerald-500/10 px-3 py-1 text-xs font-medium text-emerald-300">
+            <span className="inline-flex items-center rounded-full border border-cyan-400/40 bg-cyan-500/10 px-3 py-1 text-xs font-medium text-cyan-200">
               Gestión de instrumentos basada en la nube
             </span>
 
             <h1 className="mt-4 text-3xl font-bold tracking-tight md:text-5xl">
               Administra tus instrumentos de medición
-              <span className="block text-emerald-400">
+              <span className="block text-cyan-300">
                 sin hojas de cálculo ni estrés.
               </span>
             </h1>
 
             <p className="mt-4 text-sm leading-relaxed text-slate-300 md:text-base">
-              SmartGage es una plataforma diseñada para laboratorios y
-              empresas que necesitan controlar calibraciones, verificaciones,
-              vencimientos y trazabilidad de sus instrumentos de medición,
-              desde cualquier lugar.
+              SmartGage es una plataforma diseñada para laboratorios y empresas
+              que necesitan controlar calibraciones, verificaciones, vencimientos
+              y trazabilidad de sus instrumentos de medición, desde cualquier lugar.
             </p>
 
             <div className="mt-6 flex flex-wrap items-center gap-4">
               <Link
                 href="#contacto"
-                className="rounded-xl bg-emerald-500 px-6 py-3 text-sm font-semibold text-slate-950 shadow-lg shadow-emerald-500/30 hover:bg-emerald-400"
+                className="rounded-xl bg-cyan-400 px-6 py-3 text-sm font-semibold text-slate-950 shadow-lg shadow-cyan-500/30 hover:bg-cyan-300"
               >
                 Solicita una demo
               </Link>
               <Link
                 href="https://app.smartgage.com.mx/login"
-                className="text-sm font-medium text-slate-200 hover:text-emerald-300"
+                className="text-sm font-medium text-slate-200 hover:text-cyan-300"
               >
                 Iniciar sesión →
               </Link>
@@ -128,12 +126,12 @@ export default function Home() {
           </div>
 
           {/* Panel tipo "mockup" de la app */}
-          <div className="rounded-3xl border border-slate-800 bg-slate-900/40 p-4 shadow-2xl shadow-emerald-500/10">
+          <div className="rounded-3xl border border-slate-800 bg-slate-900/40 p-4 shadow-2xl shadow-cyan-500/10">
             <div className="mb-3 flex items-center justify-between">
               <div className="flex gap-1.5">
                 <span className="h-2.5 w-2.5 rounded-full bg-red-400" />
                 <span className="h-2.5 w-2.5 rounded-full bg-amber-400" />
-                <span className="h-2.5 w-2.5 rounded-full bg-emerald-400" />
+                <span className="h-2.5 w-2.5 rounded-full bg-cyan-400" />
               </div>
               <span className="rounded-full bg-slate-800 px-3 py-1 text-xs text-slate-300">
                 Matriz de instrumentos
@@ -143,10 +141,11 @@ export default function Home() {
             <div className="overflow-hidden rounded-2xl border border-slate-800 bg-slate-950">
               <div className="flex items-center justify-between border-b border-slate-800 px-4 py-2 text-xs text-slate-400">
                 <span>Instrumentos activos</span>
-                <span className="rounded-full bg-emerald-500/10 px-2 py-0.5 text-[11px] text-emerald-300">
+                <span className="rounded-full bg-cyan-500/10 px-2 py-0.5 text-[11px] text-cyan-200">
                   Alertas de calibración
                 </span>
               </div>
+
               <div className="divide-y divide-slate-800 text-xs md:text-sm">
                 {[
                   {
@@ -173,9 +172,7 @@ export default function Home() {
                     className="flex items-center justify-between px-4 py-2.5"
                   >
                     <div>
-                      <p className="font-medium text-slate-100">
-                        {i.nombre}
-                      </p>
+                      <p className="font-medium text-slate-100">{i.nombre}</p>
                       <p className="text-[11px] text-slate-400">{i.id}</p>
                     </div>
                     <span
@@ -205,9 +202,8 @@ export default function Home() {
               Funciones principales
             </h2>
             <p className="mt-3 text-sm text-slate-300 md:text-base">
-              SmartGage concentra lo que usas todos los días: matriz de
-              instrumentos, agenda de calibración y trazabilidad de cambios,
-              sin la complejidad de un ERP.
+              SmartGage concentra lo que usas todos los días: matriz de instrumentos,
+              agenda de calibración y trazabilidad de cambios, sin la complejidad de un ERP.
             </p>
           </div>
 
@@ -255,15 +251,13 @@ export default function Home() {
           </div>
 
           <div className="grid gap-6 md:grid-cols-2 justify-center">
-    
-            {/* MATRIZ */}
             <div className="flex flex-col gap-2">
               <div className="w-full overflow-hidden rounded-2xl border border-slate-700 bg-slate-900">
                 <Image
                   src="/matriz.png"
                   alt="Matriz de instrumentos"
-                  width={1200}               // tamaño de referencia
-                  height={600}               // solo define proporción
+                  width={1200}
+                  height={600}
                   className="object-cover"
                 />
               </div>
@@ -272,7 +266,6 @@ export default function Home() {
               </p>
             </div>
 
-            {/* CALENDARIO */}
             <div className="flex flex-col gap-2">
               <div className="w-full overflow-hidden rounded-2xl border border-slate-700 bg-slate-900">
                 <Image
@@ -287,7 +280,6 @@ export default function Home() {
                 Calendario de calibraciones
               </p>
             </div>
-
           </div>
         </section>
 
@@ -301,8 +293,7 @@ export default function Home() {
               Planes y precios
             </h2>
             <p className="mt-3 text-sm text-slate-300 md:text-base">
-              Empieza con un plan sencillo y escala conforme crecen tus
-              necesidades. 
+              Empieza con un plan sencillo y escala conforme crecen tus necesidades.
             </p>
           </div>
 
@@ -311,36 +302,21 @@ export default function Home() {
               name="Starter"
               price="Gratis / prueba"
               description="Ideal para arrancar y validar SmartGage en un solo laboratorio o empresa."
-              features={[
-                "Hasta 50 instrumentos",
-                "1 Empresa",
-                "1 Administrador",
-                "Matriz básica y calendario",
-              ]}
+              features={["Hasta 50 instrumentos", "1 Empresa", "1 Administrador", "Matriz básica y calendario"]}
               highlight={false}
             />
             <PlanCard
               name="Pro"
               price="Por definir"
               description="Pensado para laboratorios y empresas que necesitan trazabilidad y control completo."
-              features={[
-                "Hasta 1,500 instrumentos",
-                "1 Empresa",
-                "1 Administrador y 2 usuarios",                
-                "Importar desde Excel",
-              ]}
+              features={["Hasta 1,500 instrumentos", "1 Empresa", "1 Administrador y 2 usuarios", "Importar desde Excel"]}
               highlight={true}
             />
             <PlanCard
               name="Enterprise (proximamente)"
               price="A medida"
               description="Para grupos corporativos o redes de laboratorios con requerimientos específicos."
-              features={[
-                "Instrumentos ilimitados",
-                "Soporte prioritario",
-                "Integraciones avanzadas",
-                "Funcionalidades personalizadas",
-              ]}
+              features={["Instrumentos ilimitados", "Soporte prioritario", "Integraciones avanzadas", "Funcionalidades personalizadas"]}
               highlight={false}
             />
           </div>
@@ -356,7 +332,7 @@ export default function Home() {
               Contacto
             </h2>
             <p className="mt-3 text-sm text-slate-300 md:text-base">
-              ¿Te gustaría probar SmartGage en tu laboratorio o empresa? 
+              ¿Te gustaría probar SmartGage en tu laboratorio o empresa?
               Escríbeme y platicamos cómo adaptarlo a tu realidad.
             </p>
           </div>
@@ -365,16 +341,12 @@ export default function Home() {
             <ContactForm />
 
             <div className="space-y-4 text-sm text-slate-300">
-              <p>
-                También puedes contactarme directamente por correo:
-              </p>
-              <p className="rounded-xl border border-slate-800 bg-slate-900/40 px-4 py-3 text-emerald-300">
+              <p>También puedes contactarme directamente por correo:</p>
+              <p className="rounded-xl border border-slate-800 bg-slate-900/40 px-4 py-3 text-cyan-200">
                 ventas@smartgage.com.mx
               </p>
               <p>
-                Define si SmartGage será solo para tu laboratorio o si lo
-                ofrecerás como servicio a terceros. La plataforma está
-                pensada para crecer contigo.
+                Define si SmartGage será solo para tu laboratorio o si lo ofrecerás como servicio a terceros. La plataforma está pensada para crecer contigo.
               </p>
             </div>
           </div>
@@ -385,12 +357,12 @@ export default function Home() {
           <div className="flex flex-col items-center justify-between gap-3 pb-6 md:flex-row">
             <p>© {new Date().getFullYear()} SmartGage. Todos los derechos reservados.</p>
             <div className="flex gap-4">
-              <a href="#que-es-smartgage" className="hover:text-emerald-300">
+              <a href="#que-es-smartgage" className="hover:text-cyan-300">
                 Inicio
               </a>
               <Link
                 href="https://app.smartgage.com.mx/login"
-                className="hover:text-emerald-300"
+                className="hover:text-cyan-300"
               >
                 Iniciar sesión
               </Link>
@@ -404,32 +376,11 @@ export default function Home() {
 
 // COMPONENTES AUXILIARES
 
-function FeatureCard({
-  title,
-  description,
-}: {
-  title: string;
-  description: string;
-}) {
+function FeatureCard({ title, description }: { title: string; description: string }) {
   return (
     <div className="rounded-2xl border border-slate-800 bg-slate-900/40 p-4">
-      <h3 className="text-sm font-semibold text-slate-50 md:text-base">
-        {title}
-      </h3>
+      <h3 className="text-sm font-semibold text-slate-50 md:text-base">{title}</h3>
       <p className="mt-2 text-xs text-slate-300 md:text-sm">{description}</p>
-    </div>
-  );
-}
-
-function ScreenshotPlaceholder({ title }: { title: string }) {
-  return (
-    <div className="flex flex-col gap-2">
-      <div className="relative h-40 w-full overflow-hidden rounded-2xl border border-dashed border-slate-700 bg-slate-900/60">
-        <div className="absolute inset-0 flex items-center justify-center text-xs text-slate-500">
-          Aquí va una captura real de la app
-        </div>
-      </div>
-      <p className="text-xs font-medium text-slate-200 md:text-sm">{title}</p>
     </div>
   );
 }
@@ -451,7 +402,7 @@ function PlanCard({
     <div
       className={`flex flex-col rounded-2xl border p-5 ${
         highlight
-          ? "border-emerald-500 bg-slate-900/60 shadow-xl shadow-emerald-500/20"
+          ? "border-cyan-400/70 bg-slate-900/60 shadow-xl shadow-cyan-500/20"
           : "border-slate-800 bg-slate-900/40"
       }`}
     >
@@ -464,7 +415,7 @@ function PlanCard({
       <ul className="mt-4 space-y-2 text-xs text-slate-300 md:text-sm">
         {features.map((f) => (
           <li key={f} className="flex items-start gap-2">
-            <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400" />
+            <span className="mt-1 h-1.5 w-1.5 rounded-full bg-cyan-300" />
             <span>{f}</span>
           </li>
         ))}
@@ -473,7 +424,7 @@ function PlanCard({
       <div className="mt-4">
         <a
           href="#contacto"
-          className="block w-full rounded-xl border border-emerald-500/60 px-4 py-2 text-center text-xs font-semibold text-emerald-300 hover:bg-emerald-500/10 md:text-sm"
+          className="block w-full rounded-xl border border-cyan-400/60 px-4 py-2 text-center text-xs font-semibold text-cyan-200 hover:bg-cyan-500/10 md:text-sm"
         >
           Hablar sobre este plan
         </a>
