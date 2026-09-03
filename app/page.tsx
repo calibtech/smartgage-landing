@@ -197,42 +197,54 @@ export default function Home() {
           id={sections.funciones}
           className="space-y-8 border-t border-slate-800 py-16"
         >
-          <div className="max-w-2xl">
-            <h2 className="text-2xl font-semibold tracking-tight md:text-3xl">
-              Funciones principales
+          <div className="max-w-3xl">
+            <span className="text-xs font-semibold uppercase tracking-[0.18em] text-cyan-300">
+              Control metrológico
+            </span>
+
+            <h2 className="mt-3 text-2xl font-semibold tracking-tight md:text-3xl">
+              Lo esencial para mantener tus instrumentos bajo control
             </h2>
-            <p className="mt-3 text-sm text-slate-300 md:text-base">
-              SmartGage concentra lo que usas todos los días: matriz de instrumentos,
-              agenda de calibración y trazabilidad de cambios, sin la complejidad de un ERP.
+
+            <p className="mt-3 text-sm leading-6 text-slate-300 md:text-base">
+              Centraliza la información que normalmente termina dispersa entre hojas
+              de cálculo, calendarios y registros independientes. SmartGage te ayuda
+              a saber qué tienes, qué requiere atención y qué ha cambiado.
             </p>
           </div>
 
-          <div className="grid gap-6 md:grid-cols-3">
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             <FeatureCard
               title="Matriz de instrumentos"
-              description="Consulta y filtra todos tus instrumentos por nombre, identificación, ubicación, estado, fecha de calibración y más."
+              description="Mantén en un solo lugar la identificación, ubicación, marca, modelo, rango, estado y datos de calibración de cada instrumento."
             />
+
             <FeatureCard
-              title="Agenda de calibración"
-              description="Visualiza en calendario qué instrumentos vencen próximamente, recibe alertas visuales y envío de recordatorios."
+              title="Calendario de calibraciones"
+              description="Visualiza próximas fechas de calibración y detecta con anticipación los instrumentos que requieren atención."
             />
+
+            <FeatureCard
+              title="Estados y vencimientos"
+              description="Identifica rápidamente instrumentos vigentes, próximos a vencer o vencidos para priorizar acciones antes de que se conviertan en un problema."
+            />
+
             <FeatureCard
               title="Historial y trazabilidad"
-              description="Registra cambios, ediciones y bajas de instrumentos para mantener evidencia ante auditorías."
+              description="Conserva evidencia de cambios y movimientos para facilitar el seguimiento interno y la preparación ante auditorías."
             />
+
             <FeatureCard
-              title="Multi-empresa y roles"
-              description="Cada empresa ve solo sus instrumentos. Administra usuarios como admin o usuario normal."
+              title="Multiempresa y roles"
+              description="Separa la información por empresa y controla el acceso de administradores y usuarios sin mezclar instrumentos entre organizaciones."
             />
+
             <FeatureCard
-              title="Exportar a Excel"
-              description="Descarga tu matriz actual a Excel y evita capturas manuales, con validaciones básicas."
-            />
-            <FeatureCard
-              title="Listo para ampliarse"
-              description="Pensado para integrar módulos de verificaciones, incertidumbre y etiquetas."
+              title="Exportación a Excel"
+              description="Exporta tu matriz cuando necesites trabajar, respaldar o compartir información fuera de SmartGage."
             />
           </div>
+
         </section>
 
         {/* Capturas de pantalla */}
@@ -376,11 +388,28 @@ export default function Home() {
 
 // COMPONENTES AUXILIARES
 
-function FeatureCard({ title, description }: { title: string; description: string }) {
+function FeatureCard({
+  title,
+  description,
+}: {
+  title: string;
+  description: string;
+}) {
   return (
-    <div className="rounded-2xl border border-slate-800 bg-slate-900/40 p-4">
-      <h3 className="text-sm font-semibold text-slate-50 md:text-base">{title}</h3>
-      <p className="mt-2 text-xs text-slate-300 md:text-sm">{description}</p>
+    <div className="group relative overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/40 p-5 transition hover:border-cyan-400/40 hover:bg-slate-900/70">
+      <div className="absolute left-0 top-0 h-full w-0.5 bg-cyan-400/70 opacity-0 transition group-hover:opacity-100" />
+
+      <div className="mb-4 flex h-9 w-9 items-center justify-center rounded-xl border border-cyan-400/20 bg-cyan-500/10">
+        <span className="h-2.5 w-2.5 rounded-full bg-cyan-300" />
+      </div>
+
+      <h3 className="text-base font-semibold text-slate-50">
+        {title}
+      </h3>
+
+      <p className="mt-2 text-sm leading-6 text-slate-300">
+        {description}
+      </p>
     </div>
   );
 }
