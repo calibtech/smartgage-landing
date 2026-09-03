@@ -16,17 +16,17 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-slate-950 text-slate-50">
       {/* Navbar */}
-      <header className="sticky top-0 z-30 border-b border-slate-800 bg-slate-950/80 backdrop-blur">
-        <nav className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
-          <div className="flex items-center gap-3">
+      <header className="sticky top-0 z-50 border-b border-slate-800/80 bg-slate-950/95 backdrop-blur">
+        <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center">
             <Image
-              src="/logo-smartgage.png"
-              alt="SmartGage"
-              width={72}
-              height={48}
-              className="object-contain"
+              src="/logo-smartgage-dark.png"
+              alt="SmartGage - Metrology Management"
+              width={240}
+              height={64}
+              className="h-10 w-auto object-contain"
               priority
-            />            
+            />
           </div>
 
           <div className="hidden items-center gap-6 text-sm md:flex">
@@ -68,7 +68,7 @@ export default function Home() {
       </header>
 
       {/* Hero / Qué es SmartGage */}
-      <main className="mx-auto max-w-6xl px-4 pb-16 pt-10 md:pt-16">
+      <main className="mx-auto max-w-7xl px-4 pb-16 pt-10 sm:px-6 lg:px-8 md:pt-16">
         <section
           id={sections.queEs}
           className="relative grid gap-10 pb-20 md:grid-cols-2 md:items-center"
@@ -77,21 +77,21 @@ export default function Home() {
           <div className="pointer-events-none absolute -top-24 left-1/2 -z-10 h-[420px] w-[420px] -translate-x-1/2 rounded-full bg-cyan-500/20 blur-[120px]" />
         
           <div>
-            <span className="inline-flex items-center rounded-full border border-cyan-400/40 bg-cyan-500/10 px-3 py-1 text-xs font-medium text-cyan-200">
-              Gestión de instrumentos basada en la nube
+            <span className="inline-flex items-center rounded-full border border-cyan-400/30 bg-cyan-500/10 px-3 py-1.5 text-xs font-medium text-cyan-200">
+              Gestión metrológica en un solo lugar
             </span>
 
-            <h1 className="mt-4 text-3xl font-bold tracking-tight md:text-5xl">
+            <h1 className="mt-5 max-w-2xl text-4xl font-bold leading-[1.08] tracking-tight sm:text-5xl lg:text-5xl">
               Administra tus instrumentos de medición
               <span className="block text-cyan-300">
                 sin hojas de cálculo ni estrés.
               </span>
             </h1>
 
-            <p className="mt-4 text-sm leading-relaxed text-slate-300 md:text-base">
-              SmartGage es una plataforma diseñada para laboratorios y empresas
-              que necesitan controlar calibraciones, verificaciones, vencimientos
-              y trazabilidad de sus instrumentos de medición, desde cualquier lugar.
+            <p className="mt-5 max-w-xl text-base leading-7 text-slate-300">
+              Centraliza tu matriz de instrumentos, controla fechas de calibración,
+              identifica vencimientos y mantén la trazabilidad de tus equipos desde
+              una plataforma diseñada para la gestión metrológica.
             </p>
 
             <div className="mt-6 flex flex-wrap items-center gap-4">
