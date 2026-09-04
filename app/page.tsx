@@ -252,13 +252,19 @@ export default function Home() {
           id={sections.capturas}
           className="space-y-8 border-t border-slate-800 py-16"
         >
-          <div className="max-w-2xl">
-            <h2 className="text-2xl font-semibold tracking-tight md:text-3xl">
-              Capturas de pantalla
+          <div className="max-w-3xl">
+            <span className="text-xs font-semibold uppercase tracking-[0.18em] text-cyan-300">
+              Interfaz real
+            </span>
+
+            <h2 className="mt-3 text-2xl font-semibold tracking-tight md:text-3xl">
+              SmartGage en acción
             </h2>
-            <p className="mt-3 text-sm text-slate-300 md:text-base">
-              Una vista rápida de cómo luce SmartGage. Más que una tabla,
-              es tu tablero de control de instrumentos.
+
+            <p className="mt-3 text-sm leading-6 text-slate-300 md:text-base">
+              Consulta tu matriz de instrumentos y visualiza próximas calibraciones
+              desde una interfaz clara, diseñada para encontrar rápidamente la
+              información que necesita atención.
             </p>
           </div>
 
@@ -266,11 +272,11 @@ export default function Home() {
             <div className="flex flex-col gap-2">
               <div className="w-full overflow-hidden rounded-2xl border border-slate-700 bg-slate-900">
                 <Image
-                  src="/matriz.png"
+                  src="/matriz-2026.png"
                   alt="Matriz de instrumentos"
                   width={1200}
                   height={600}
-                  className="object-cover"
+                  className="h-auto w-full object-contain"
                 />
               </div>
               <p className="text-xs font-medium text-slate-200 md:text-sm">
@@ -281,11 +287,11 @@ export default function Home() {
             <div className="flex flex-col gap-2">
               <div className="w-full overflow-hidden rounded-2xl border border-slate-700 bg-slate-900">
                 <Image
-                  src="/calendario_v2.png"
+                  src="/calendario-2026.png"
                   alt="Calendario de calibraciones"
                   width={1200}
                   height={600}
-                  className="object-cover"
+                  className="h-auto w-full object-contain"
                 />
               </div>
               <p className="text-xs font-medium text-slate-200 md:text-sm">
