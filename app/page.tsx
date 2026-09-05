@@ -46,7 +46,7 @@ export default function Home() {
               Capturas
             </a>
             <a href={`#${sections.planes}`} className="hover:text-cyan-300">
-              Precios
+              Planes
             </a>
             <a
               href={`#${sections.contacto}`}
@@ -112,7 +112,7 @@ export default function Home() {
             <div className="mt-6 grid grid-cols-2 gap-4 text-xs text-slate-400 md:text-sm">
               <div>
                 <p className="font-semibold text-slate-200">
-                  Pensado para metrólogos
+                  Pensado para responsables de metrólogía
                 </p>
                 <p>Fechas de calibración, matrices, historial y alertas.</p>
               </div>
@@ -307,34 +307,60 @@ export default function Home() {
           className="space-y-8 border-t border-slate-800 py-16"
         >
           <div className="max-w-2xl">
-            <h2 className="text-2xl font-semibold tracking-tight md:text-3xl">
-              Planes y precios
+            <span className="text-xs font-semibold uppercase tracking-[0.18em] text-cyan-300">
+              Empieza con SmartGage
+            </span>
+
+            <h2 className="mt-3 text-2xl font-semibold tracking-tight md:text-3xl">
+              Elige la forma de comenzar
             </h2>
-            <p className="mt-3 text-sm text-slate-300 md:text-base">
-              Empieza con un plan sencillo y escala conforme crecen tus necesidades.
+
+            <p className="mt-3 text-sm leading-6 text-slate-300 md:text-base">
+              Prueba SmartGage en un entorno real y elige la opción que mejor se adapte
+              al tamaño y necesidades de tu organización.
             </p>
           </div>
 
           <div className="grid gap-6 md:grid-cols-3">
             <PlanCard
-              name="Starter"
-              price="Gratis / prueba"
-              description="Ideal para arrancar y validar SmartGage en un solo laboratorio o empresa."
-              features={["Hasta 50 instrumentos", "1 Empresa", "1 Administrador", "Matriz básica y calendario"]}
+              name="Prueba piloto"
+              price="Conoce SmartGage"
+              description="Evalúa SmartGage con tus propios instrumentos y comprueba cómo puede ayudarte en tu operación diaria."
+              features={[
+                "Configuración inicial acompañada",
+                "Matriz de instrumentos",
+                "Calendario de calibraciones",
+                "Seguimiento durante la prueba",
+              ]}
+              ctaLabel="Solicitar prueba"
               highlight={false}
             />
+
             <PlanCard
-              name="Pro"
-              price="Por definir"
-              description="Pensado para laboratorios y empresas que necesitan trazabilidad y control completo."
-              features={["Hasta 1,500 instrumentos", "1 Empresa", "1 Administrador y 2 usuarios", "Importar desde Excel"]}
+              name="SmartGage Pro"
+              price="Para tu operación"
+              description="La opción principal para empresas que necesitan mantener sus instrumentos, calibraciones y trazabilidad bajo control."
+              features={[
+                "Gestión de instrumentos",
+                "Estados y vencimientos",
+                "Historial y trazabilidad",
+                "Usuarios, roles y exportación a Excel",
+              ]}
+              ctaLabel="Solicitar información"
               highlight={true}
             />
+
             <PlanCard
-              name="Enterprise (proximamente)"
+              name="Enterprise"
               price="A medida"
-              description="Para grupos corporativos o redes de laboratorios con requerimientos específicos."
-              features={["Instrumentos ilimitados", "Soporte prioritario", "Integraciones avanzadas", "Funcionalidades personalizadas"]}
+              description="Para organizaciones con múltiples empresas, usuarios o necesidades de gestión más específicas."
+              features={[
+                "Gestión multiempresa",
+                "Administración de usuarios y roles",
+                "Acompañamiento en implementación",
+                "Evaluación de requerimientos especiales",
+              ]}
+              ctaLabel="Hablar sobre Enterprise"
               highlight={false}
             />
           </div>
@@ -425,12 +451,14 @@ function PlanCard({
   price,
   description,
   features,
+  ctaLabel,
   highlight,
 }: {
   name: string;
   price: string;
   description: string;
   features: string[];
+  ctaLabel: string;
   highlight?: boolean;
 }) {
   return (
@@ -459,9 +487,13 @@ function PlanCard({
       <div className="mt-4">
         <a
           href="#contacto"
-          className="block w-full rounded-xl border border-cyan-400/60 px-4 py-2 text-center text-xs font-semibold text-cyan-200 hover:bg-cyan-500/10 md:text-sm"
+          className={`block w-full rounded-xl px-4 py-2 text-center text-xs font-semibold transition md:text-sm ${
+            highlight
+              ? "bg-cyan-400 text-slate-950 shadow-lg shadow-cyan-500/20 hover:bg-cyan-300"
+              : "border border-cyan-400/60 text-cyan-200 hover:bg-cyan-500/10"
+          }`}
         >
-          Hablar sobre este plan
+          {ctaLabel}
         </a>
       </div>
     </div>
