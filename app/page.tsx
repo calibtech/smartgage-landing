@@ -371,27 +371,51 @@ export default function Home() {
           id={sections.contacto}
           className="space-y-8 border-t border-slate-800 py-16"
         >
-          <div className="max-w-2xl">
-            <h2 className="text-2xl font-semibold tracking-tight md:text-3xl">
-              Contacto
+          <div className="max-w-3xl">
+            <span className="text-xs font-semibold uppercase tracking-[0.18em] text-cyan-300">
+              Hablemos
+            </span>
+
+            <h2 className="mt-3 text-2xl font-semibold tracking-tight md:text-3xl">
+              Lleva SmartGage a tu operación
             </h2>
-            <p className="mt-3 text-sm text-slate-300 md:text-base">
-              ¿Te gustaría probar SmartGage en tu laboratorio o empresa?
-              Escríbeme y platicamos cómo adaptarlo a tu realidad.
+
+            <p className="mt-3 text-sm leading-6 text-slate-300 md:text-base">
+              Cuéntanos cómo gestionas actualmente tus instrumentos de medición y
+              revisamos juntos cómo SmartGage puede ayudarte a simplificar el control
+              de calibraciones, vencimientos y trazabilidad.
             </p>
           </div>
 
           <div className="grid gap-10 md:grid-cols-2">
             <ContactForm />
 
-            <div className="space-y-4 text-sm text-slate-300">
-              <p>También puedes contactarme directamente por correo:</p>
-              <p className="rounded-xl border border-slate-800 bg-slate-900/40 px-4 py-3 text-cyan-200">
-                ventas@smartgage.com.mx
-              </p>
-              <p>
-                Define si SmartGage será solo para tu laboratorio o si lo ofrecerás como servicio a terceros. La plataforma está pensada para crecer contigo.
-              </p>
+            <div className="space-y-5 text-sm text-slate-300">
+              <div className="rounded-2xl border border-slate-800 bg-slate-900/40 p-5">
+                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-cyan-300">
+                  Contacto directo
+                </p>
+
+                <p className="mt-3 text-base font-medium text-slate-100">
+                  ventas@smartgage.com.mx
+                </p>
+
+                <p className="mt-2 leading-6 text-slate-400">
+                  Podemos revisar tu operación actual, número de instrumentos y forma de
+                  trabajo para definir la mejor manera de comenzar.
+                </p>
+              </div>
+
+              <div className="rounded-2xl border border-slate-800 bg-slate-900/20 p-5">
+                <p className="font-medium text-slate-100">
+                  ¿Quieres empezar con una prueba piloto?
+                </p>
+
+                <p className="mt-2 leading-6 text-slate-400">
+                  Utiliza tus propios instrumentos y evalúa SmartGage en un escenario
+                  cercano a tu operación real.
+                </p>
+              </div>
             </div>
           </div>
         </section>
