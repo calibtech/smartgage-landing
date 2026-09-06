@@ -9,7 +9,7 @@ const sections = {
   queEs: "que-es-smartgage",
   funciones: "funciones-principales",
   capturas: "capturas-de-pantalla",
-  planes: "planes-y-precios",
+  planes: "planes",
   contacto: "contacto",
 };
 
@@ -363,7 +363,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Planes y precios */}
+        {/* Planes */}
         <section
           id={sections.planes}
           className="space-y-8 border-t border-slate-800 py-16"
@@ -458,9 +458,12 @@ export default function Home() {
                   Contacto directo
                 </p>
 
-                <p className="mt-3 text-base font-medium text-slate-100">
+                <a
+                  href="mailto:ventas@smartgage.com.mx"
+                  className="mt-3 inline-block text-base font-medium text-slate-100 transition hover:text-cyan-300"
+                >
                   ventas@smartgage.com.mx
-                </p>
+                </a>
 
                 <p className="mt-2 leading-6 text-slate-400">
                   Podemos revisar tu operación actual, número de instrumentos y forma de
@@ -513,7 +516,6 @@ function FeatureCard({
   title: string;
   description: string;
 }) {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   return (
     <div className="group relative overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/40 p-5 transition hover:border-cyan-400/40 hover:bg-slate-900/70">
       <div className="absolute left-0 top-0 h-full w-0.5 bg-cyan-400/70 opacity-0 transition group-hover:opacity-100" />
