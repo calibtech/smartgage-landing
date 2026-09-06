@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import ContactForm from "../components/ContactForm";
@@ -13,6 +14,8 @@ const sections = {
 };
 
 export default function Home() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   return (
     <div className="min-h-screen bg-slate-950 text-slate-50">
       {/* Navbar */}
@@ -56,15 +59,74 @@ export default function Home() {
             </a>
           </div>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2">
+            <button
+              type="button"
+              onClick={() => setMobileMenuOpen((open) => !open)}
+              className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-slate-700 text-slate-300 transition hover:border-cyan-400/50 hover:text-cyan-300 md:hidden"
+              aria-label="Abrir menú"
+              aria-expanded={mobileMenuOpen}
+            >
+              {mobileMenuOpen ? (
+                <span className="text-xl leading-none">×</span>
+              ) : (
+                <span className="text-xl leading-none">☰</span>
+              )}
+            </button>
+
             <Link
               href="https://app.smartgage.com.mx/login"
-              className="rounded-xl bg-cyan-400 px-4 py-2 text-sm font-semibold text-slate-950 shadow-lg shadow-cyan-500/30 hover:bg-cyan-300"
+              className="rounded-xl bg-cyan-400 px-4 py-2 text-sm font-semibold text-slate-950 shadow-lg shadow-cyan-500/30 transition hover:bg-cyan-300"
             >
               Iniciar sesión
             </Link>
           </div>
         </nav>
+        {mobileMenuOpen && (
+          <div className="border-t border-slate-800 bg-slate-950 md:hidden">
+            <div className="mx-auto grid max-w-7xl gap-1 px-4 py-3">
+              <a
+                href={`#${sections.queEs}`}
+                onClick={() => setMobileMenuOpen(false)}
+                className="rounded-lg px-3 py-2 text-sm text-slate-300 transition hover:bg-slate-900 hover:text-cyan-300"
+              >
+                Qué es
+              </a>
+
+              <a
+                href={`#${sections.funciones}`}
+                onClick={() => setMobileMenuOpen(false)}
+                className="rounded-lg px-3 py-2 text-sm text-slate-300 transition hover:bg-slate-900 hover:text-cyan-300"
+              >
+                Funciones
+              </a>
+
+              <a
+                href={`#${sections.capturas}`}
+                onClick={() => setMobileMenuOpen(false)}
+                className="rounded-lg px-3 py-2 text-sm text-slate-300 transition hover:bg-slate-900 hover:text-cyan-300"
+              >
+                Capturas
+              </a>
+
+              <a
+                href={`#${sections.planes}`}
+                onClick={() => setMobileMenuOpen(false)}
+                className="rounded-lg px-3 py-2 text-sm text-slate-300 transition hover:bg-slate-900 hover:text-cyan-300"
+              >
+                Planes
+              </a>
+
+              <a
+                href={`#${sections.contacto}`}
+                onClick={() => setMobileMenuOpen(false)}
+                className="rounded-lg px-3 py-2 text-sm text-slate-300 transition hover:bg-slate-900 hover:text-cyan-300"
+              >
+                Contacto
+              </a>
+            </div>
+          </div>
+        )}
       </header>
 
       {/* Hero / Qué es SmartGage */}
@@ -451,6 +513,7 @@ function FeatureCard({
   title: string;
   description: string;
 }) {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   return (
     <div className="group relative overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/40 p-5 transition hover:border-cyan-400/40 hover:bg-slate-900/70">
       <div className="absolute left-0 top-0 h-full w-0.5 bg-cyan-400/70 opacity-0 transition group-hover:opacity-100" />
