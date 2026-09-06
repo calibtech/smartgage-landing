@@ -47,12 +47,14 @@ export default function ContactForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="space-y-4 rounded-2xl border border-slate-800 bg-slate-900/40 p-6"
+      className="space-y-5 rounded-2xl border border-slate-800 bg-slate-900/40 p-6"
     >
       <div>
-        <label className="text-sm text-slate-200">Nombre completo</label>
+        <label className="text-sm font-medium text-slate-200">
+          Nombre completo
+        </label>
         <input
-          className="mt-1 w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-50 outline-none focus:border-emerald-400"
+          className="mt-2 w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2.5 text-sm text-slate-50 outline-none transition placeholder:text-slate-500 focus:border-cyan-400 focus:ring-2 focus:ring-cyan-500/15"
           placeholder="Ingresa tu nombre"
           value={nombre}
           onChange={(e) => setNombre(e.target.value)}
@@ -61,21 +63,25 @@ export default function ContactForm() {
       </div>
 
       <div>
-        <label className="text-sm text-slate-200">Correo electrónico</label>
+        <label className="text-sm font-medium text-slate-200">
+          Correo electrónico
+        </label>
         <input
           type="email"
-          className="mt-1 w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-50 outline-none focus:border-emerald-400"
+          className="mt-2 w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2.5 text-sm text-slate-50 outline-none transition placeholder:text-slate-500 focus:border-cyan-400 focus:ring-2 focus:ring-cyan-500/15"
           placeholder="tucorreo@empresa.com"
           value={correo}
           onChange={(e) => setCorreo(e.target.value)}
           required
-        />
+          />
       </div>
 
       <div>
-        <label className="text-sm text-slate-200">Empresa / laboratorio</label>
+        <label className="text-sm font-medium text-slate-200">
+          Empresa / laboratorio
+        </label>
         <input
-          className="mt-1 w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-50 outline-none focus:border-emerald-400"
+          className="mt-2 w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2.5 text-sm text-slate-50 outline-none transition placeholder:text-slate-500 focus:border-cyan-400 focus:ring-2 focus:ring-cyan-500/15"
           placeholder="Nombre de tu empresa"
           value={empresa}
           onChange={(e) => setEmpresa(e.target.value)}
@@ -83,30 +89,42 @@ export default function ContactForm() {
       </div>
 
       <div>
-        <label className="text-sm text-slate-200">Mensaje</label>
+        <label className="text-sm font-medium text-slate-200">
+          Mensaje
+        </label>
         <textarea
           rows={4}
-          className="mt-1 w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-50 outline-none focus:border-emerald-400"
-          placeholder="Cuéntame brevemente qué necesitas controlar con SmartGage…"
+          className="mt-2 w-full resize-none rounded-lg border border-slate-700 bg-slate-950 px-3 py-2.5 text-sm text-slate-50 outline-none transition placeholder:text-slate-500 focus:border-cyan-400 focus:ring-2 focus:ring-cyan-500/15"
+          placeholder="Cuéntanos brevemente qué necesitas controlar con SmartGage…"
           value={mensaje}
           onChange={(e) => setMensaje(e.target.value)}
           required
         />
       </div>
 
-      {info && <p className="text-xs text-emerald-400">{info}</p>}
-      {error && <p className="text-xs text-red-400">{error}</p>}
+      {info && (
+        <p className="rounded-lg border border-emerald-500/20 bg-emerald-500/10 px-3 py-2 text-sm text-emerald-300">
+          {info}
+        </p>
+      )}
+
+      {error && (
+        <p className="rounded-lg border border-red-500/20 bg-red-500/10 px-3 py-2 text-sm text-red-300">
+          {error}
+        </p>
+      )}
 
       <button
         type="submit"
         disabled={enviando}
-        className="w-full rounded-xl bg-emerald-500 px-4 py-2.5 text-sm font-semibold text-slate-950 hover:bg-emerald-400 disabled:opacity-70 disabled:cursor-not-allowed"
+        className="w-full rounded-xl bg-cyan-400 px-4 py-3 text-sm font-semibold text-slate-950 shadow-lg shadow-cyan-500/20 transition hover:bg-cyan-300 disabled:cursor-not-allowed disabled:opacity-60"
       >
         {enviando ? "Enviando..." : "Enviar mensaje"}
       </button>
 
-      <p className="text-xs text-slate-400">
-        ¡Gracias por tu interés! Te responderé lo antes posible.
+      <p className="text-xs leading-5 text-slate-400">
+        Te responderemos lo antes posible para conocer tu operación y revisar
+        cómo SmartGage puede ayudarte.
       </p>
     </form>
   );

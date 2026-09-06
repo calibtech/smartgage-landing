@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "SmartGage | Metrology Management",
   description:
-    "Plataforma en la nube para la gestión de instrumentos de medición, calibraciones y trazabilidad.",
+    "Gestiona instrumentos de medición, calibraciones, vencimientos y trazabilidad desde una plataforma clara y centralizada.",
 };
 
 export default function RootLayout({
@@ -24,7 +24,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="es">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
